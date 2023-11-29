@@ -1,46 +1,42 @@
+#!/usr/bin/env node
 // тут просто исполняймый файл с правилами вопросами и ответами а также вычисление случайного вопроса и его ответ
-import logicgame from "../../src/index.js";
+import logicgame from '../../src/index.js';
 
-let rules = "What is the result of the expression?"; //сюда пиши правила
+let rules = 'What is the result of the expression?';
 
-const questionf = () => {
-  // сюда вопрос
+const expressionFunction = () => {
+  let signs = ['+', '*', '-'][Math.floor(Math.random() * 3)];
+  let oneOperand = Math.floor(Math.random() * 50);
+  let twoOperand = Math.floor(Math.random() * 50);
 
-  let signs = ["+", "*", "-"][Math.floor(Math.random() * 3)];
-  let oneper = Math.floor(Math.random() * 50);
-  let twooper = Math.floor(Math.random() * 50);
+  let expression = `${oneOperand} ${signs} ${twoOperand}`;
 
-  let qwestion = `${oneper} ${signs} ${twooper}`;
-
-  return qwestion;
+  return expression;
 };
 
-const answerdonef = (question) => {
-  //сюда правильный ответ
-  let trueAnswer = 0;
-  //code
-  const mass = question.split(" ");
+const correctAnswerFunction = (expression) => {
+  let correctAnswer = 0;
+  const convertedToArray = expression.split(' ');
   switch (
-    mass[1] //25 - 11
+    convertedToArray[1] //25 - 11 => [25,-,11]
   ) {
-    case "+":
-      trueAnswer = Number(mass[0]) + Number(mass[2]);
+    case '+':
+      correctAnswer = Number(convertedToArray[0]) + Number(convertedToArray[2]);
       break;
 
-    case "-":
-      trueAnswer = Number(mass[0]) - Number(mass[2]);
+    case '-':
+      correctAnswer = Number(convertedToArray[0]) - Number(convertedToArray[2]);
       break;
 
-    case "*":
-      trueAnswer = Number(mass[0]) * Number(mass[2]);
+    case '*':
+      correctAnswer = Number(convertedToArray[0]) * Number(convertedToArray[2]);
       break;
 
     default:
-      console.log("Да как ты вообще это сделал.");
+      console.log('Да как ты вообще это сделал.');
   }
 
-  //
-  return trueAnswer.toString();
+  return correctAnswer.toString();
 };
 
-console.log(logicgame(rules, questionf, answerdonef));
+console.log(logicgame(rules, expressionFunction, correctAnswerFunction));

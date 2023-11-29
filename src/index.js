@@ -1,29 +1,25 @@
 import readlineSync from 'readline-sync';
 import namer from './cli.js';
 
-const logicgame = (rules, questionf, answerdonef) => {
+const logicgame = (rules, questionFunction, correctAnswerFunction) => {
   console.log('Welcome to the Brain Games!');
 
-  const name = namer(); //запрос имени тоже
+  const name = namer();
   console.log(`Hello, ${name}!`);
-  console.log(rules); //правила надо импортировать
-  // start
+  console.log(rules);
+  
   for (let i = 0; i < 3; i += 1) {
-    //раунды игры неизменны их 3
-    let questi = questionf();
-    console.log(`Question: ${questi}`); // задаём вопрос
-    const answeruser = readlineSync.question('Your answer: '); //узнали ответ игрока
+    let question = questionFunction();
+    console.log(`Question: ${question}`);
+    const typedResponse = readlineSync.question('Your answer: ');
 
-    if (answerdonef(questi) !== answeruser) {
-      //проиграл игру
-      return `'${answeruser}' is wrong answer ;(. Correct answer was '${answerdonef(
-        questi
-      )}'.\nLet\'s try again, ${name}!`;
+    if (correctAnswerFunction(question) !== typedResponse) {
+      return `'${typedResponse}' is wrong answer ;(. Correct answer was '${correctAnswerFunction(question)}'.\nLet\'s try again, ${name}!`;
     }
     console.log('Correct!');
 
     if (i === 2) {
-      return `Congratulations, ${name}!`; //выйграл игру
+      return `Congratulations, ${name}!`;
     }
   }
 };

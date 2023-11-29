@@ -2,9 +2,9 @@
 // тут просто исполняймый файл с правилами вопросами и ответами а также вычисление случайного вопроса и его ответ
 import logicgame from '../../src/index.js';
 
-let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+let rules = 'Find the greatest common divisor of given numbers';
 
-const expressionFunction = () => {
+const twoRandomNumsFunction = () => {
   let oneRandomNum = Math.floor(Math.random() * 50) + 1;
   let twoRandomNum = Math.floor(Math.random() * 50) + 1;
   let twoRandomNums = `${oneRandomNum} ${twoRandomNum}`;
@@ -25,4 +25,4 @@ const correctAnswerFunction = (twoRandomNums) => {
   return correctAnswer.toString();
 };
 
-console.log(logicgame(rules, expressionFunction, correctAnswerFunction));
+console.log(logicgame(rules, twoRandomNumsFunction, correctAnswerFunction));

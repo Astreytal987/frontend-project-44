@@ -8,7 +8,7 @@ let qwestion = Math.floor(Math.random() * 50); //рандомное число �
 return qwestion
 }
 
-const trueAnswerf = (question) => {
+const answerdonef = (question) => {
 let trueAnswer = ""
 if (question % 2 == 0) {
     trueAnswer = "yes"
@@ -20,4 +20,4 @@ if (question % 2 !== 0) {
 return trueAnswer
 }
 
-console.log(logicgame(rules, questionf, trueAnswerf))//ещё предстоит импортировать
+console.log(logicgame(rules, questionf, answerdonef))//ещё предстоит импортировать

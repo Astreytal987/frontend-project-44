@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const namer = () => {
-    const name1 = readlineSync.question('Мay I have your name? ')
-    return name1
+    const name = readlineSync.question('Мay I have your name? ')
+    return name
 }
 export default namer

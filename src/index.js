@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import namer from './cli.js';
 
-const logicgame = (rules, questionFunction, correctAnswerFunction) => {
+const logiGame = (rules, questionFunction, correctAnswerFunction) => {
   console.log('Welcome to the Brain Games!');
 
   const name = namer();
@@ -24,4 +24,4 @@ const logicgame = (rules, questionFunction, correctAnswerFunction) => {
   }
 };
 
-export default logicgame;
+export default logicGame;

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // тут просто исполняймый файл с правилами вопросами и ответами а также вычисление случайного вопроса и его ответ
-import logicgame from '../../src/index.js';
+import logicGame from '../../src/index.js';
 
 let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -21,4 +21,4 @@ const correctAnswerFunction = (randomNum) => {
   return correctAnswer;
 };
 
-console.log(logicgame(rules, expressionFunction, correctAnswerFunction));
+console.log(logicGame(rules, expressionFunction, correctAnswerFunction));

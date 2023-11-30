@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // тут просто исполняймый файл с правилами вопросами и ответами а также вычисление случайного вопроса и его ответ
-import logicgame from '../../src/index.js';
+import logicGame from '../../src/index.js';
 
 let rules = 'What number is missing in the progression?';
 let missingElementForAnswer;
@@ -24,4 +24,4 @@ const correctAnswerFunction = () => {
   return missingElementForAnswer.join();
 };
 
-console.log(logicgame(rules, progressionFunction, correctAnswerFunction));
+console.log(logicGame(rules, progressionFunction, correctAnswerFunction));

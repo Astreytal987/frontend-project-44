@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import getName from './cli.js';
 
-const logiGame = (rules, questionFunction, correctAnswerFunction) => {
+const logicGame = (rules, questionFunction, correctAnswerFunction) => {
   console.log('Welcome to the Brain Games!');
 
   const name = getName();

@@ -5,8 +5,8 @@ import logicGame from '../../src/index.js';
 let rules = 'Find the greatest common divisor of given numbers';
 
 const twoRandomNumsFunction = () => {
-  let oneRandomNum = Math.floor(Math.random() * 50) + 1;
-  let twoRandomNum = Math.floor(Math.random() * 50) + 1;
+  let oneRandomNum = Math.floor(Math.random() * 50) + 11;
+  let twoRandomNum = Math.floor(Math.random() * 50) + 11;
   let twoRandomNums = `${oneRandomNum} ${twoRandomNum}`;
   return twoRandomNums;
 };

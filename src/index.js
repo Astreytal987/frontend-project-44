@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
-import namer from './cli.js';
+import getName from './cli.js';
 
 const logiGame = (rules, questionFunction, correctAnswerFunction) => {
   console.log('Welcome to the Brain Games!');
 
-  const name = namer();
+  const name = getName();
   console.log(`Hello, ${name}!`);
   console.log(rules);
   

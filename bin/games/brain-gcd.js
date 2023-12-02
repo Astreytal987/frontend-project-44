@@ -11,7 +11,6 @@ const twoRandomNumsFunction = () => {
 };
 
 const correctAnswerFunction = (twoRandomNums) => {
-  let correctAnswer = 0;
   const convertedToArray = twoRandomNums.split(' ');
   while (convertedToArray[0] !== convertedToArray[1]) {
     if (convertedToArray[0] > convertedToArray[1]) {
@@ -20,8 +19,7 @@ const correctAnswerFunction = (twoRandomNums) => {
       convertedToArray[1] -= convertedToArray[0];
     }
   }
-  correctAnswer = convertedToArray[0];
-  return correctAnswer.toString();
+  return convertedToArray[0].toString();
 };
 
 console.log(logicGame(rules, twoRandomNumsFunction, correctAnswerFunction));

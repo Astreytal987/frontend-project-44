@@ -22,7 +22,7 @@ const logicGame = (rules, questionFunction, correctAnswerFunction) => {
       return `Congratulations, ${name}!`;
     }
   }
-  return 'finish'
+  return 'finish';
 };
 
 export default logicGame;

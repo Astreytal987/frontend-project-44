@@ -21,5 +21,4 @@ const progressionFunction = () => {
 
 const correctAnswerFunction = () => missingElementForAnswer.join();
 
-
 console.log(logicGame(rules, progressionFunction, correctAnswerFunction));

@@ -10,7 +10,7 @@ const expressionFunction = () => {
 
 const isPrimeNumberFunction = (randomNum) => {
   let correctAnswer = 'yes';
-  for (let i = 2; i < randomNum; i+= 1) {
+  for (let i = 2; i < randomNum; i += 1) {
     if (randomNum % i === 0) {
       correctAnswer = 'no';
     }

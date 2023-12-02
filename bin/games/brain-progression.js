@@ -17,7 +17,7 @@ const progressionFunction = () => {
 
   missingElementForAnswer = progression.splice(missingElement, 1, '..');
 
-  return progression;
+  return progression.join(' ');
 };
 
 const correctAnswerFunction = () => {

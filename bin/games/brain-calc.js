@@ -1,15 +1,14 @@
 #!/usr/bin/env node
-// тут просто исполняймый файл с правилами вопросами и ответами а также вычисление случайного вопроса и его ответ
 import logicGame from '../../src/index.js';
 
-let rules = 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
 const expressionFunction = () => {
-  let signs = ['+', '*', '-'][Math.floor(Math.random() * 3)];
-  let oneOperand = Math.floor(Math.random() * 50);
-  let twoOperand = Math.floor(Math.random() * 50);
+  const signs = ['+', '*', '-'][Math.floor(Math.random() * 3)];
+  const oneOperand = Math.floor(Math.random() * 50);
+  const twoOperand = Math.floor(Math.random() * 50);
 
-  let expression = `${oneOperand} ${signs} ${twoOperand}`;
+  const expression = `${oneOperand} ${signs} ${twoOperand}`;
 
   return expression;
 };
@@ -18,7 +17,7 @@ const correctAnswerFunction = (expression) => {
   let correctAnswer = 0;
   const convertedToArray = expression.split(' ');
   switch (
-    convertedToArray[1] //25 - 11 => [25,-,11]
+    convertedToArray[1]
   ) {
     case '+':
       correctAnswer = Number(convertedToArray[0]) + Number(convertedToArray[2]);
